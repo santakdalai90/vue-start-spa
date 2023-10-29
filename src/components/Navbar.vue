@@ -9,11 +9,11 @@
 
             <!-- Links -->
             <ul class="nav navbar-nav">
-                <li v-for="(page, idx) in pages" class="nav-item" :key="idx">
+                <li v-for="(page, idx) in publishedPages" class="nav-item" :key="idx">
                     <navbar-link
                         :page="page"
                         :isActive="activePage === idx"
-                        @click.prevent="navLinkClick(idx)"
+                        @click.prevent="navLinkClick(idx)" 
                     ></navbar-link>
                     
                 </li>
@@ -38,6 +38,14 @@ export default {
     components: {
         NavbarLink
     },
+    created() {
+        this.getThemeSetting()
+    },
+    computed: {
+        publishedPages() {
+            return this.pages.filter(p => p.published)
+        }
+    },
     props: ['pages', 'activePage', 'navLinkClick'],
     data() {
         return {
@@ -52,6 +60,16 @@ export default {
             }
 
             this.theme = theme
+            this.storeThemeSetting()
+        },
+        storeThemeSetting() {
+            localStorage.setItem('theme', this.theme)
+        },
+        getThemeSetting() {
+            let theme = localStorage.getItem('theme')
+            if (theme) {
+                this.theme = theme
+            }
         }
     }
 }

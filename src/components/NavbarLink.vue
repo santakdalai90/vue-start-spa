@@ -3,8 +3,7 @@
         class="nav-link" 
         :class="activeClasses" 
         :href="page.link.url"
-        :title="`This page goes to the ${page.link.text} page`" 
-        
+        :title="`This page goes to the ${page.link.text} page`"
     >{{page.link.text }}</a>
 </template>
 
