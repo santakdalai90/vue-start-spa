@@ -36,3 +36,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
             </div>
         </template>
         ```
+
+1. To install router
+    ```
+    npm install vue-router --save
+    ```

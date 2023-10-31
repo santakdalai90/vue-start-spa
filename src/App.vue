@@ -1,17 +1,14 @@
 <template>
-  <navbar 
-    :pages="pages" 
-    :active-page="activePage" 
-    :nav-link-click="(index) => activePage = index"
-  ></navbar>
-  <page-viewer
+  <navbar></navbar>
+  <router-view></router-view>
+  <!-- <page-viewer
     v-if="pages.length > 0" 
     :page="pages[activePage]"
   ></page-viewer>
 
   <create-page
     @page-created="pageCreated"
-  ></create-page>
+  ></create-page> -->
 </template>
 
 <script>
@@ -26,22 +23,7 @@ export default {
     PageViewer,
     CreatePage
   },
-  created() {
-    this.getPages();
-  },
-  data() {
-    return {
-      activePage: 0,
-      pages: []
-    };
-  },
   methods: {
-    async getPages() {
-      let res = await fetch('pages.json');
-      let data = await res.json();
-
-      this.pages = data;
-    },
     pageCreated(pageObj) {
       this.pages.push(pageObj)
     }
