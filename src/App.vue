@@ -12,16 +12,11 @@
 </template>
 
 <script>
-import PageViewer from './components/PageViewer.vue';
 import Navbar from './components/Navbar.vue';
-import CreatePage from './components/CreatePage.vue';
-
 
 export default {
   components: {
-    Navbar,
-    PageViewer,
-    CreatePage
+    Navbar
   },
   methods: {
     pageCreated(pageObj) {

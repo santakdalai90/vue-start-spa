@@ -18,7 +18,7 @@
                 </li>
                 <li>
                     <router-link 
-                        to="/create"
+                        to="/pages/create"
                         class="nav-link" 
                         active-class="active"
                     >Create Page</router-link>
