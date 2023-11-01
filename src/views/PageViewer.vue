@@ -1,7 +1,5 @@
 <template>
     <div v-if="page" class="container">
-        <!-- <h1>{{page.pageTitle}}</h1>
-        <p>{{page.content}}</p> -->
         <h1>{{page.pageTitle}}</h1>
         <p>{{page.content}}</p>
     </div>    
@@ -10,11 +8,9 @@
 <script>
 export default {
     props: ['index'],
+    inject: ['$pages'],
     created() {
         this.page = this.$pages.getSinglePage(this.index)
-        // this.$watch(() => this.$route.params, (newParams, prevParams) => {
-        //     this.page = this.$pages.getSinglePage(newParams.index)
-        // })
     },
     data() {
         return {

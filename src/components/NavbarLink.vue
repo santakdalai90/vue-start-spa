@@ -2,7 +2,7 @@
     <router-link 
         :to="`/${index}`"
         class="nav-link"
-        active-class="active emphasize" 
+        active-class="active" 
         :title="`This page goes to the ${page.link.text} page`"
     >{{page.link.text }}</router-link>
 </template>
@@ -12,8 +12,3 @@ export default {
     props: ['page', 'index']
 }
 </script>
-<!-- <style scoped>
-.emphasize {
-    text-decoration: underline !important;
-}
-</style> -->
